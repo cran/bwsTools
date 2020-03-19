@@ -1,7 +1,7 @@
 Type: Package
 Package: bwsTools
 Title: Tools for Case 1 Best-Worst Scaling (MaxDiff) Designs
-Version: 1.0.1
+Version: 1.1.0
 Authors@R: person(given = "Mark", family = "White", email = "markhwhiteii@gmail.com",
                   role = c("aut", "cre"))
 Description: Tools to design best-worst scaling designs (i.e., balanced incomplete block designs) and
@@ -13,14 +13,16 @@ Description: Tools to design best-worst scaling designs (i.e., balanced incomple
 License: MIT + file LICENSE
 URL: https://github.com/markhwhiteii/bwsTools
 BugReports: https://github.com/markhwhiteii/bwsTools/issues
-Depends: R (>= 3.6.0)
-Imports: crossdes, dplyr, igraph, magrittr, rlang, tidyr
+Depends: R (>= 3.5.0)
+Imports: crossdes, dplyr, igraph, magrittr, rlang, tidyr, ggplot2
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+VignetteBuilder: knitr
+Suggests: testthat, knitr
 NeedsCompilation: no
-Packaged: 2019-11-26 03:52:03 UTC; mark.white
+Packaged: 2020-03-19 20:06:36 UTC; mark.white
 Author: Mark White [aut, cre]
 Maintainer: Mark White <markhwhiteii@gmail.com>
 Repository: CRAN
-Date/Publication: 2019-12-04 11:30:02 UTC
+Date/Publication: 2020-03-19 20:30:09 UTC
