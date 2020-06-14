@@ -14,16 +14,16 @@ library(ggplot2)
 dat <- vdata %>% 
   group_by(issue) %>% 
   summarise(
-    t = n(),
-    b = sum(value == 1),
-    w = sum(value == -1)
+    totl = n(),
+    best = sum(value == 1),
+    wrst = sum(value == -1)
   )
 
 ## ----show_dat-----------------------------------------------------------------
 dat
 
 ## ----ae_mnl-------------------------------------------------------------------
-res1 <- ae_mnl(dat, "t", "b", "w")
+res1 <- ae_mnl(dat, "totl", "best", "wrst")
 
 ## ----show ae_mnl_res----------------------------------------------------------
 res1
@@ -31,9 +31,9 @@ res1
 ## -----------------------------------------------------------------------------
 dat %>% 
   bind_cols(res1) %>% 
-  arrange(b1) %>% 
+  arrange(b) %>% 
   mutate(issue = factor(issue, issue)) %>% 
-  ggplot(aes(x = issue, y = b1)) +
+  ggplot(aes(x = issue, y = b)) +
   geom_point() +
   geom_errorbar(aes(ymin = lb, ymax = ub), width = 0) +
   coord_flip()
